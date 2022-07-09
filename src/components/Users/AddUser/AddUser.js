@@ -11,9 +11,11 @@ const AddUser = ({ onAddUser }) => {
   const [enteredAge, setEnteredAge] = useState("");
   const [error, setError] = useState(null);
 
+  // const nameInputRef = useRef();
+  // const ageInputRef = useRef();
+
   const addUserHandler = (event) => {
     event.preventDefault();
-
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
         title: "Invalid Input",
@@ -50,7 +52,7 @@ const AddUser = ({ onAddUser }) => {
   return (
     <Wrapper>
       {/* or <> </> or React.Fragment */}
-      {error && <ErrorModel error={error} onClose={errorHandler}/>}
+      {error && <ErrorModel error={error} onClose={errorHandler} />}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
@@ -59,6 +61,7 @@ const AddUser = ({ onAddUser }) => {
             id="username"
             type="text"
             value={enteredUsername}
+            // ref={nameInputRef}
             onChange={usernameChangeHandler}
           />
 
@@ -68,6 +71,7 @@ const AddUser = ({ onAddUser }) => {
             id="age"
             type="number"
             value={enteredAge}
+            // ref={ageInputRef}
             onChange={ageChangeHandler}
           />
 
