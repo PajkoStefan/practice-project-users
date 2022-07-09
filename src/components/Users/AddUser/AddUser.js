@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Wrapper from "../../Helpers/Wrapper";
 import Button from "../../UI/Button/Button";
 import Card from "../../UI/Card/Card";
 import ErrorModel from "../../UI/ErrorModal/ErrorModal";
@@ -47,7 +48,8 @@ const AddUser = ({ onAddUser }) => {
   };
 
   return (
-    <div>
+    <Wrapper>
+      {/* or <> </> or React.Fragment */}
       {error && <ErrorModel error={error} onClose={errorHandler}/>}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
@@ -72,7 +74,7 @@ const AddUser = ({ onAddUser }) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
