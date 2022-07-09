@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <div className="App">
-      <h1>New App</h1>
-    </div>
-  );
-}
+import AppWrapper from "./components/AppWrapper/AppWrapper";
+
+const App = () => {
+  return <AppWrapper />;
+};
 
 export default App;
